@@ -1,0 +1,5 @@
+package com.sunilos.dto;
+
+public class TestNamedQuery {
+
+}

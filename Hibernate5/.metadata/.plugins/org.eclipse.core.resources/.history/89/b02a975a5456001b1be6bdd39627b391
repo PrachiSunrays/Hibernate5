@@ -1,0 +1,18 @@
+package com.sunilos.dto;
+
+import javax.persistence.criteria.CriteriaBuilder;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class TestCriteria {
+
+	public static void main(String[] args) throws Exception {
+		SessionFactory sf = HibernateUtil.getSessionFactory();
+		Session session = sf.openSession();
+
+		// Criteria c = session.createCriteria(User.class);
+		CriteriaBuilder builder = session.getCriteriaBuilder();
+
+	}
+}
