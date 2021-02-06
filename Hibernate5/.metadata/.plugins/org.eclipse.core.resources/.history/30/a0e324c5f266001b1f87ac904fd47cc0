@@ -1,0 +1,13 @@
+package com.sunilos.dto;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class TestNamedQuery {
+
+	public static void main(String[] args) {
+		SessionFactory sf = HibernateUtil.getSessionFactory();
+		Session session = sf.openSession();
+		
+	}
+}

@@ -1,0 +1,8 @@
+package com.sunilos.dto;
+
+public class TestCriteria {
+
+	public static void main(String[] args) {
+		
+	}
+}
