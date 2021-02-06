@@ -5,8 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import com.sunilos.dto.HibernateUtil;
 import com.sunilos.dto.User;
+import com.sunilos.util.HibernateUtil;
 
 public class TestO2M {
 
