@@ -13,13 +13,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "USER")
-@NamedQuery(name = "allUser",query = "from User")
-@Cache(region = "personCache", usage = CacheConcurrencyStrategy.READ_ONLY)
+@NamedQuery(name = "allUser",query = "from User")//Named Query
+@Cache(region = "personCache", usage = CacheConcurrencyStrategy.READ_ONLY)//Second Level Cache
 public class User {
 
-	@Id
-	@GeneratedValue(generator="increment")
-	@GenericGenerator(name="increment", strategy = "increment")
+		@Id
+		@GeneratedValue(generator="increment")
+		@GenericGenerator(name="increment", strategy = "increment")
 		@Column(name = "ID")
 		private int id;
 
