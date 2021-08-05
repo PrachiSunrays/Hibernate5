@@ -26,7 +26,7 @@ public class TestCriteria {
 		CriteriaQuery<User> query = builder.createQuery(User.class);
 		
 		Root<User> root = query.from(User.class);
-		query.select(root).where(builder.equal(root.get("id"), 3));
+		query.select(root).where(builder.equal(root.get("id"), 1));
 		
 		Query q = session.createQuery(query);
 		

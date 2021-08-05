@@ -1,10 +1,13 @@
 package com.sunilos.mapping;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,18 @@ public class Employee {
 
 	@Column(name = "DESIGNATION")
 	private String designation;
+
+	@ManyToOne
+        @JoinColumn(name = "DEPT_ID")
+	private Department department;
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 
 	public long getId() {
 		return id;
@@ -46,6 +61,5 @@ public class Employee {
 		this.designation = designation;
 	}
 
-	// Setter and Getter methods
 
 }

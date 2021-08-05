@@ -5,19 +5,51 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.sunilos.dto.Employee;
+import com.sunilos.dto.EmployeeId;
 import com.sunilos.dto.User;
 import com.sunilos.util.HibernateUtil;
 
 public class TestCRUD {
 
 	public static void main(String[] args) throws Exception {
-		//testAdd();
+		testAdd();
 		//testUpdate();
 		//testDelete();
-		testGet();
+		//testGet();
 		//testUpdateSingleCloumn();
+		//testEmployeeAdd();
 	}
+	/*
+	 * Test Composite key
+	 * 
+	 */
+	public static void testEmployeeAdd() throws Exception {
+		SessionFactory sf = HibernateUtil.getSessionFactory();
+		Session session = sf.openSession();
+		Transaction tx = null;
+		try {
+			tx = session.beginTransaction();
+			
+			EmployeeId eid = new EmployeeId();
+			eid.setCompanyId("Rays");
+			eid.setEmployeeId("123");
 
+			Employee e = new Employee();
+			e.setEmployeeId(eid);
+			e.setName("Rays");
+			e.setEmail("rays@raytech.com");
+			e.setPhoneNumber("12345678");
+			session.save(e);
+			
+			tx.commit();
+		} catch (HibernateException e) {
+			tx.rollback();
+		} finally {
+			session.close();
+			HibernateUtil.shutdown();
+		}
+	}
 	public static void testAdd() throws Exception {
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		Session session = sf.openSession();

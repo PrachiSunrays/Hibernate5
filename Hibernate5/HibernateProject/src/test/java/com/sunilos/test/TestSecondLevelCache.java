@@ -12,6 +12,7 @@ public class TestSecondLevelCache {
 		
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 		Session session = sf.openSession();
+		
 		User u =(User) session.get(User.class, 1);
 		System.out.println(u.getId());
 		System.out.println(u.getFirstName());

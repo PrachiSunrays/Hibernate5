@@ -11,7 +11,15 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
 import com.sunilos.dto.User;
+import com.sunilos.inheritanc.Account;
+import com.sunilos.inheritanc.Cheque;
+import com.sunilos.inheritanc.Credit;
+import com.sunilos.inheritanc.CreditCard;
+import com.sunilos.inheritanc.Debit;
+import com.sunilos.inheritanc.Payment;
 import com.sunilos.mapping.Department;
+import com.sunilos.mapping.Instructor;
+import com.sunilos.mapping.InstructorDetail;
 import com.sunilos.mapping.Employee;
 
 public class HibernateUtil {
@@ -59,9 +67,22 @@ public class HibernateUtil {
 
 		// 5. Register entity class
 		MetadataSources sources = new MetadataSources(registry);
-		sources.addAnnotatedClass(User.class);
-		sources.addAnnotatedClass(Employee.class);
-		sources.addAnnotatedClass(Department.class);
+		//sources.addAnnotatedClass(Account.class);
+		sources.addAnnotatedClass(Credit.class);
+		sources.addAnnotatedClass(Debit.class);
+		
+		//sources.addAnnotatedClass(User.class);
+		/*
+		 * sources.addAnnotatedClass(Employee.class);
+		 * sources.addAnnotatedClass(Department.class);
+		 */
+		//sources.addAnnotatedClass(CreditCard.class);
+		//sources.addAnnotatedClass(Cheque.class);
+		/*
+		 * sources.addAnnotatedClass(Instructor.class);
+		 * sources.addAnnotatedClass(InstructorDetail.class);
+		 */
+		
 
 		/* sources.addAnnotatedClass(Role.class); */
 		/*

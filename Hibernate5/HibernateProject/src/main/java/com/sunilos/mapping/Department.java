@@ -18,13 +18,14 @@ public class Department {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "DPT_ID")
+	@Column(name = "DEPT_ID")
 	private long id;
 
 	@Column(name = "NAME", nullable = false, unique = true)
 	private String name;
 
-	@OneToMany(cascade = CascadeType.ALL)
+	//@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
 	private List<Employee> employees = new ArrayList<Employee>();
 
 	public long getId() {
